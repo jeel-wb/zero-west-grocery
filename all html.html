@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zero Waste Market • Shop (Improved)</title>
+    <link rel="icon" href="logo.png" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="navwrap">
+        <div class="logo">
+          <img src="logo.png" alt="Zero Waste Market" onerror="this.style.display='none'" />
+          <span>Zero Waste Market</span>
+        </div>
+
+        <nav class="nav" id="topnav">
+          <a href="#/home">Home</a>
+          <a href="#/shop">Shop</a>
+          <a href="#/sustainability">Sustainability</a>
+          <a href="#/contact">Contact</a>
+        </nav>
+
+        <div class="searchbar" role="search">
+          <input id="q" type="search" placeholder="Search eco products… (type & press Enter)" onkeydown="if(event.key==='Enter'){setQuery(this.value)}" aria-label="Search products" />
+          <button onclick="setQuery(document.getElementById('q').value)" aria-label="Search button">Search</button>
+        </div>
+
+        <button class="cartbtn" onclick="go('#/cart')" aria-label="Open cart">
+          Cart
+          <span class="cartcount" id="cart-count">0</span>
+        </button>
+
+        <div class="hamburger" onclick="document.getElementById('topnav').classList.toggle('open')">☰</div>
+      </div>
+    </header>
+
+    <!-- App Root -->
+    <main id="app"></main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 Zero Waste Market. All rights reserved.</p>
+      <button class="vision" id="creator-vision">Creator Review</button>
+    </footer>
+
+    <!-- Product Modal -->
+    <div class="modal" id="product-modal" onclick="if(event.target.id==='product-modal'){closeModal()}">
+      <div class="sheet">
+        <div id="product-modal-body"></div>
+      </div>
+    </div>
+
+    <script src="java.js"></script>
+  </body>
+</html>
